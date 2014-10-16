@@ -27,7 +27,7 @@ class TestComplex < Test::Unit::TestCase
 
 	def test_failure
 		assert_equal("0 + 0i",(@cero + @unitario).to_s, "Suma errónea")
-		assert_equal("5 + 5i",(@unitario prod_escalar(10)),"Producto escalar erróneo")
+		assert_equal("5 + 5i",(@unitario prod_escalar(10)).to_s,"Producto escalar erróneo")
 		assert_equal("-1 - 1i",(@cero - @unitario).to_s, "Resta erróena")
 
 	end

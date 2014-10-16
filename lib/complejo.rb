@@ -20,7 +20,10 @@ def class complejo
 	end
 
 	def / (n_complex)
-		Complejo.new(((@real*n_complex.real)+(@imaginaria*n_complex.imaginaria))/(n_complex.real^2+n_complex.imaginaria^2), (((@imaginaria*n_complex.real-@real*n_complex.imaginaria)/n_complex.real^2+n_complex.imaginaria^2)))
+
+	a=((@real*n_complex.real)+(@imaginaria*n_complex.imaginaria)) / (n_complex.real^2+n_complex.imaginaria^2)
+	b= (((@imaginaria*n_complex.real-@real*n_complex.imaginaria) / n_complex.real^2+n_complex.imaginaria^2))
+		Complejo.new(a,b)
 	end
 
 
@@ -37,7 +40,7 @@ def class complejo
 
 	end
 
-	def prod_escalar (escalar)
+	def x (escalar)
 	
 		Complejo.new(escalar*@real, escalar*@imaginaria)
 	end

@@ -1,7 +1,26 @@
 def class complejo
 
-	def + (a, b)
+	attr_reader :real, :imaginaria
 
+	def initialize(real, imaginaria)
+
+		@real=real
+		@imaginaria=imaginaria
+
+	end
+
+	def to_s
+		"#{@real} + #{@imaginaria}i"
+	end
+
+#OPERACIONES DE NUMERS COMPLEJOS
+
+	def + (n_complex)
+		Complejo.new(@real+n_complex.real, @imaginaria+n_complex.imaginaria )
+	end
+
+	def / (n_complex)
+		Complejo.new(((@real*n_complex.real)+(@imaginaria*n_complex.imaginaria))/(n_complex.real^2+n_complex.imaginaria^2), (((@imaginaria*n_complex.real-@real*n_complex.imaginaria)/n_complex.real^2+n_complex.imaginaria^2)))
 	end
 
 

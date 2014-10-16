@@ -1,4 +1,4 @@
-require 'lib/complejo'
+require 'lib/complejo.rb'
 require 'test/unit'
 
 class TestComplex < Test::Unit::TestCase
@@ -14,7 +14,7 @@ class TestComplex < Test::Unit::TestCase
 	def text_simple
 		assert_equal("0 + 0i", @cero.to_s, "Cero correcto")
 		assert_equal("1 + 1i", @unitario.to_s, "Uno correcto")
-#		assert_equal("2 + 2i", (@unitario prod_escalar(2)).to_s)
+		assert_equal("2 + 2i", (@unitario x 2).to_s)
 		assert_equal("1 + 1i", (@cero + @unitario).to_s)
 
 
@@ -26,9 +26,9 @@ class TestComplex < Test::Unit::TestCase
 	end
 
 	def test_failure
-		assert_equal("0 + 0i",(@cero + @unitario).to_s, "Suma errónea")
-#		assert_equal("5 + 5i",(@unitario prod_escalar(10)).to_s,"Producto escalar erróneo")
-		assert_equal("-1 - 1i",(@cero - @unitario).to_s, "Resta erróena")
+		assert_equal("0 + 0i", (@cero + @unitario).to_s, "Suma errónea")
+		assert_equal("5 + 5i", (@unitario x 10).to_s,"Producto escalar erróneo")
+		assert_equal("-1 - 1i", (@cero - @unitario).to_s, "Resta erróena")
 
 	end
 
